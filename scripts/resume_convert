@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+# purpose: convert html resume to erb, pdf, txt, etc
+# extraction now disabled - edit the html directly!
+# TODO: try w3m
+#require 'nokogiri'
+
+path_write_static = Rails.root + "public"
+path_html = "#{path_write_static}/mikeallred.html"
+path_erb = "#{Rails.root}/app/views/resume/index.html.erb"
+
+cmd_to_txt = <<-eoc
+  cat #{path_html} | lynx -dump -stdin -width 1024 > #{path_write_static}/mikeallred.txt
+eoc
+  #cat #{path_html} | w3m -dump -T "text/plain" > #{path_write_static}/mikeallred.txt
+  #cat #{path_html} | elinks -dump > #{path_write_static}/mikeallred.w3m.txt
+  #cat #{path_html} | html2text -style compact > "#{path_write_static}/mikeallred.html2text.txt"
+system cmd_to_txt
+
+cmd_to_dos = <<-eoc
+  cat #{path_write_static}/mikeallred.txt | todos > #{path_write_static}/mikeallred.dos.txt
+eoc
+system cmd_to_dos
+
+cmd_to_docx = <<-eoc
+  pandoc -s -S #{path_html} -o #{path_write_static}/mikeallred.docx
+eoc
+system cmd_to_docx
+
+cmd_to_pdf = <<-eoc
+  htmldoc --webpage -t pdf14 #{path_html} > #{path_write_static}/mikeallred.pdf
+eoc
+system cmd_to_pdf
+
+cmd_to_erb = <<-eoc
+  cp -pv #{path_html} #{path_erb}
+eoc
+system cmd_to_erb
+
+#doc = Nokogiri::HTML(open(path_html))
+#puts doc.css('body').text.squeeze(" \n")
+
+=begin
+
+# convert to other formats
+
+
+cat $path_html | lynx -dump -stdin > "$path_write_base/mikeallred.lynx.txt"
+cat "$path_write_base/mikeallred.lynx.txt" | todos > "$path_write_base/mikeallred.lynx_dos.txt"
+
+
+#echo <<EOS > "$path_write_base/index.html"
+#EOS
+
+# copy to index 
+
+cp -v $path_html $path_write_base/index.html 
+=end
