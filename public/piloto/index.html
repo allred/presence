@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Piloto Map</title>
+<!--
+    <style type="text/css">
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      #iframe1 {
+        height: 50%;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+        width: 50%;
+      }
+    </style>
+-->
+<style type="text/css">
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+   #map {
+    height: 100%;
+  }
+</style>
+</head>
+
+<body>
+
+js:
+<p>
+
+iframe:
+<p>
+<!--
+<iframe
+  id="iframe1"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-F_2MbADZGdgIgEov-WFoySR-dBPLxEY&q=Space+Needle,Seattle+WA"
+  allowfullscreen>
+</iframe>
+-->
+  <!-- style="border:0" -->
+
+
+<div id="map"></div>
+
+<script>
+  // places api AIzaSyDGMY1T2TLX2AimIhbKHPy5-sw5DikwLqA
+  function initMap() {
+    var myLatLng = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: myLatLng
+    });
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Hello Worlds!'
+    });
+console.log('hello');
+  } 
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGMY1T2TLX2AimIhbKHPy5-sw5DikwLqA&callback=initMap">
+</script>
+
+</body>
+</html>
