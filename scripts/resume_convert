@@ -34,7 +34,7 @@ system cmd_to_pdf
 cmd_to_erb = <<-eoc
   cp -pv #{path_html} #{path_erb}
 eoc
-system cmd_to_erb
+#system cmd_to_erb
 
 #doc = Nokogiri::HTML(open(path_html))
 #puts doc.css('body').text.squeeze(" \n")
