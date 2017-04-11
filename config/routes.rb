@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'react_one' => 'react_one#index'
+
   get 'welcome/index'
 
   get 'resume' => 'resume#index'

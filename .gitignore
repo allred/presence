@@ -1,3 +1,10 @@
+log
+node_modules
+npm-debug.log*
+
+# for webpack integration 
+/app/assets/javascripts
+
 *.rbc
 capybara-*.html
 .rspec

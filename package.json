@@ -1,0 +1,39 @@
+{
+  "name": "presence",
+  "version": "1.0.0",
+  "description": "personal web site",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allred/presence.git"
+  },
+  "author": "Mike Allred",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allred/presence/issues"
+  },
+  "homepage": "https://github.com/allred/presence#readme",
+  "dependencies": {
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.3.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "coffee-loader": "^0.7.3",
+    "exports-loader": "^0.6.4",
+    "expose-loader": "^0.7.3",
+    "imports-loader": "^0.7.1",
+    "lodash": "^4.17.4",
+    "webpack": "^2.3.3"
+  }
+}
