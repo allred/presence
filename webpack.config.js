@@ -1,24 +1,32 @@
 // http://clarkdave.net/2015/01/how-to-use-webpack-with-rails/
-var path = require('path');
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
-var config = module.exports = {
+const config = module.exports = {
   // the base path which will be used to resolve entry points
   context: __dirname,
   // the main entry point for our application's frontend JS
   entry: [
     './app/frontend/javascripts/entry.js',
     './app/frontend/javascripts/google-analytics.js',
+    './src/app/index.js',
   ],
-};
-
-config.output = {
-  // this is our app/assets/javascripts directory, which is part of the Sprockets pipeline
-  path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-  // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
-  filename: 'bundle.js',
-  // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles
-  publicPath: '/assets',
+  output: {
+    // this is our app/assets/javascripts directory, which is part of the Sprockets pipeline
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
+    // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
+    filename: 'bundle.js',
+    // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles
+    publicPath: '/assets',
+  },
+  module: {
+    loaders: [
+      { test: /src\/.+js$/, loader: 'babel-loader', },
+      { test: /\.coffee$/, loader: 'coffee-loader' },
+    ],
+  },
+  plugins: [
+  ],
 };
 
 config.resolve = {
@@ -28,20 +36,4 @@ config.resolve = {
   // by default, webpack will search in `web_modules` and `node_modules`. Because we're using
   // Bower, we want it to look in there too
   //modulesDirectories: [ 'node_modules', 'bower_components' ],
-};
-
-config.plugins = [
-  // we need this plugin to teach webpack how to find module entry points for bower files,
-  // as these may not have a package.json file
-  /*
-  new webpack.ResolverPlugin([
-    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
-  ])
-  */
-];
-
-config.module = {
-  loaders: [
-    { test: /\.coffee$/, loader: 'coffee-loader' },
-  ],
 };
