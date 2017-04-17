@@ -1,3 +1,7 @@
+# vim
+*.swp
+
+# npm
 log
 node_modules
 npm-debug.log*
