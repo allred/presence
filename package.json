@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "webpack -d --display-reasons --display-chunks --progress",
+    "webpack_dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
