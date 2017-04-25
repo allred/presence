@@ -4,3 +4,12 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+task 'dev_start' do
+  puts "START task dev_start"
+  task 'tmp:cache:clear'
+  task 'assets:clobber'
+  task 'assets:precompile'
+  task 'db:migrate'
+  puts "END task dev_start"
+end
