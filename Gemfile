@@ -4,12 +4,12 @@ source 'https://rubygems.org'
 gem 'rails-controller-testing'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7'
+gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
-# mja: added the following to deal with warnings
+# mja: added the following 5.0.6 lock to deal with warnings
 # mja: https://github.com/rails/sass-rails/issues/381
 gem 'sass-rails', '5.0.6'
 
