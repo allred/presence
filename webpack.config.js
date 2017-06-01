@@ -6,17 +6,18 @@ const config = module.exports = {
   // the base path which will be used to resolve entry points
   context: __dirname,
   // the main entry point for our application's frontend JS
-  entry: [
-    './app/frontend/javascripts/entry.js',
-    './src/app/index.js',
+  entry: { 
+    //'./app/frontend/javascripts/entry.js',
+    react_one: './src/app/index.js',
+    brain_leader: './src/brain_leader/index.js',
     //'./app/frontend/javascripts/google-analytics.js',
-  ],
+  },
   output: {
     // this is our app/assets/javascripts directory, which is part of the Sprockets pipeline
     //path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     path: path.join(__dirname, 'public', 'js'),
     // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles
     publicPath: '/assets',
   },
