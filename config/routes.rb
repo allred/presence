@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'brain_leader/index'
+  get 'brain_leader' => 'brain_leader#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'react_one' => 'react_one#index'
