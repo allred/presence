@@ -52,6 +52,7 @@ group :development do
   # Use Capistrano for deployment
   gem 'capistrano-rails'
   gem 'listen'
+  gem 'guard'
 end
 
 gem 'therubyracer'
