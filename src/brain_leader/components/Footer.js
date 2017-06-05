@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <p>
-  footer be here
+  BRAIN LEADER 
   </p>
 )
 

@@ -23,6 +23,7 @@ const config = module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /src\/.+js$/, loader: 'babel-loader', },
       { test: /\.coffee$/, loader: 'coffee-loader' },
     ],
