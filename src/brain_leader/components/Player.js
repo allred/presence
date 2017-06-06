@@ -1,15 +1,18 @@
 import React from 'react'
+import {
+  ListGroupItem,
+} from 'react-bootstrap'
 import { PropTypes } from 'prop-types'
 
 const Player = ({ onClick, completed, text }) => (
-  <li
+  <ListGroupItem
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
     {text}
-  </li>
+  </ListGroupItem>
 )
 
 Player.propTypes = {

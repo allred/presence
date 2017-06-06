@@ -2,9 +2,6 @@ import React from 'react'
 import { 
   Button,
   Col,
-  FieldGroup,
-  FormControl,
-  Grid,
   Row,
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
@@ -13,7 +10,7 @@ import { addPlayer } from '../actions'
 let AddPlayer = ({ dispatch }) => {
   let input
   return (
-    <div>
+    <Row>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -29,7 +26,7 @@ let AddPlayer = ({ dispatch }) => {
           ADD PLAYER
         </Button>
       </form>
-    </div>
+    </Row>
   )
 }
 AddPlayer = connect()(AddPlayer)

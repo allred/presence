@@ -1,15 +1,20 @@
 import React from 'react'
+import {
+  Row,
+} from 'react-bootstrap'
 import { PropTypes } from 'prop-types'
 import Player from './Player'
 
 const PlayerList = ({ players, onPlayerClick }) => (
   <ul>
     {players.map(player =>
-      <Player
-        key={player.id}
-        {...player}
-        onClick={() => onPlayerClick(player.id)}
-      />
+      <Row key={player.id}>
+        <Player
+          key={player.id}
+          {...player}
+          onClick={() => onPlayerClick(player.id)}
+        />
+      </Row>
     )}
   </ul>
 )
