@@ -2,9 +2,8 @@ import React from 'react'
 import Footer from './Footer'
 import AddPlayer from '../containers/AddPlayer'
 import VisiblePlayerList from '../containers/VisiblePlayerList'
+import 'bootstrap/dist/css/bootstrap.css'
 import styles from './App.css'
-//import 'bootstrap/dist/js/bootstrap'
-//import 'bootstrap/dist/css/bootstrap.css'
 
 const App = () => (
   <div>

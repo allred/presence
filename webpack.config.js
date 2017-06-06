@@ -1,4 +1,5 @@
 // http://clarkdave.net/2015/01/how-to-use-webpack-with-rails/
+// https://github.com/webpack-contrib/css-loader/issues/151
 const webpack = require('webpack');
 const path = require('path');
 
@@ -26,6 +27,8 @@ const config = module.exports = {
       { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' },
       { test: /src\/.+js$/, loader: 'babel-loader', },
       { test: /\.coffee$/, loader: 'coffee-loader' },
+      { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/, loader: 'url-loader?limit=10000' },
+      { test: /\.(eot|ttf|wav|mp3)$/, loader: 'file-loader' },
     ],
   },
   plugins: [
