@@ -1,5 +1,12 @@
 import React from 'react'
-import { Button, FormControl } from 'react-bootstrap'
+import { 
+  Button,
+  Col,
+  FieldGroup,
+  FormControl,
+  Grid,
+  Row,
+} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addPlayer } from '../actions'
 
@@ -15,12 +22,12 @@ let AddPlayer = ({ dispatch }) => {
         dispatch(addPlayer(input.value))
         input.value = ''
       }}>
-      <input ref={node => {
-        input = node
-      }} />
-      <Button type="submit" bsStyle="primary">
-        ADD PLAYER
-      </Button>
+        <input ref={node => {
+          input = node
+        }} />
+        <Button type="submit" bsStyle="success">
+          ADD PLAYER
+        </Button>
       </form>
     </div>
   )
