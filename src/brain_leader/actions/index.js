@@ -1,9 +1,23 @@
-let nextBrainId = 0
-export const addBrain = (text) => {
+let nextPlayerId = 0
+export const addPlayer = (text) => {
   return {
-    type: 'ADD_BRAIN',
-    id: nextBrainId++,
+    type: 'ADD_PLAYER',
+    id: nextPlayerId++,
     text
+  }
+}
+
+export const setVisibilityFilter = (filter) => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}
+
+export const togglePlayer = (id) => {
+  return {
+    type: 'TOGGLE_PLAYER',
+    id
   }
 }
 

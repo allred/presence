@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import brains from './brains'
+import players from './players'
+import visibilityFilter from './visibilityFilter'
 
 const brainLeader = combineReducers({
-  brains,
+  players,
+  visibilityFilter
 })
 
 export default brainLeader

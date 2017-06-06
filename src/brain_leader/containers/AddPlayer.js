@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addBrain } from '../actions'
+import { addPlayer } from '../actions'
 
-let AddBrain = ({ dispatch }) => {
+let AddPlayer = ({ dispatch }) => {
   let input
   return (
     <div>
@@ -11,7 +11,7 @@ let AddBrain = ({ dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addBrain(input.value))
+        dispatch(addPlayer(input.value))
         input.value = ''
       }}>
       </form>
@@ -24,6 +24,6 @@ let AddBrain = ({ dispatch }) => {
     </div>
   )
 }
-AddBrain = connect()(AddBrain)
+AddPlayer = connect()(AddPlayer)
 
-export default AddBrain
+export default AddPlayer
