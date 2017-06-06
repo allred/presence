@@ -14,13 +14,13 @@ let AddPlayer = ({ dispatch }) => {
         dispatch(addPlayer(input.value))
         input.value = ''
       }}>
-      </form>
       <input ref={node => {
         input = node
       }} />
       <button type="submit">
         Add Player
       </button>
+      </form>
     </div>
   )
 }
