@@ -6,17 +6,15 @@ import { PropTypes } from 'prop-types'
 import Player from './Player'
 
 const PlayerList = ({ players, onPlayerClick }) => (
-  <ul>
+  <div>
     {players.map(player =>
-      <Row key={player.id}>
-        <Player
-          key={player.id}
-          {...player}
-          onClick={() => onPlayerClick(player.id)}
-        />
-      </Row>
+      <Player
+        key={player.id}
+        {...player}
+        onClick={() => onPlayerClick(player.id)}
+      />
     )}
-  </ul>
+  </div>
 )
 
 PlayerList.propTypes = {
