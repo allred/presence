@@ -4,7 +4,8 @@ const player = (state = {}, action) => {
       return {
         id: action.id,
         text: action.text,
-        completed: false
+        completed: false,
+        brainCount: action.brainCount,
       }
     case 'TOGGLE_PLAYER':
       if (state.id !== action.id) {
@@ -14,7 +15,7 @@ const player = (state = {}, action) => {
       return Object.assign({}, state, {
         completed: !state.completed
       })
-
+    case 'DELETE_PLAYER':
     default:
       return state
   }

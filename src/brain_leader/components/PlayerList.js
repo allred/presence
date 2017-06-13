@@ -22,6 +22,7 @@ PlayerList.propTypes = {
     id: PropTypes.number.isRequired,
     completed: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
+    brainCount: PropTypes.number.isRequired,
   }).isRequired).isRequired,
   onPlayerClick: PropTypes.func.isRequired
 }
