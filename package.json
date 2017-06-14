@@ -38,6 +38,7 @@
     "precss": "^1.4.0",
     "prop-types": "^15.5.8",
     "rails-erb-loader": "^5.0.0",
+    "randomcolor": "^0.5.3",
     "react": "^15.5.3",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.3",

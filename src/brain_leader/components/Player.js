@@ -5,20 +5,24 @@ import {
   Row,
 } from 'react-bootstrap'
 import { PropTypes } from 'prop-types'
-import PlusBrain from '../components/PlusBrain'
 
-const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text, brainCount, player }) => (
-  <Row>
+const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text, brainCount, player, bgColor }) => (
+  <Row
+    style={{
+      backgroundColor: bgColor
+    }}
+  >
     <Col md={2}
       onClick={onClick}
       style={{
-        textDecoration: completed ? 'line-through' : 'none'
+        textDecoration: completed ? 'line-through' : 'none',
       }}
     >
-      {player.id} {text}
+      {text}
     </Col>
     <Col md={2}>
       <Button
+        bsStyle="warning"
         onClick={onMinusBrainClick}
       >
         - BRAIN
@@ -26,6 +30,7 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
     </Col>
     <Col md={2}>
       <Button 
+        bsStyle="success"
         onClick={onPlusBrainClick}
       >
         + BRAIN

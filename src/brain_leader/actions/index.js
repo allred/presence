@@ -1,11 +1,16 @@
+import randomcolor from 'randomcolor'
 let nextPlayerId = 0
 let brainCountStart = 0
 export const addPlayer = (text) => {
+  let bgColor = randomcolor({
+    luminosity: 'light',
+  })
   return {
     type: 'ADD_PLAYER',
     id: nextPlayerId++,
     text: text,
     brainCount: brainCountStart,
+    bgColor: bgColor,
   }
 }
 

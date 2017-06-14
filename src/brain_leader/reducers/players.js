@@ -6,6 +6,7 @@ const player = (state = {}, action) => {
         text: action.text,
         completed: false,
         brainCount: action.brainCount,
+        bgColor: action.bgColor,
       }
     case 'ADD_BRAIN':
       if (state.id !== action.id) {
