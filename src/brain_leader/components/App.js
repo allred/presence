@@ -11,6 +11,7 @@ import styles from './App.css'
 const App = () => (
   <Grid>
     <VisiblePlayerList />
+    <p />
     <AddPlayer />
     <Footer />
   </Grid>

@@ -7,7 +7,7 @@ import {
 import { PropTypes } from 'prop-types'
 import PlusBrain from '../components/PlusBrain'
 
-const Player = ({ onClick, onPlusBrainClick, completed, text, brainCount, player }) => (
+const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text, brainCount, player }) => (
   <Row>
     <Col md={2}
       onClick={onClick}
@@ -19,7 +19,7 @@ const Player = ({ onClick, onPlusBrainClick, completed, text, brainCount, player
     </Col>
     <Col md={2}>
       <Button
-        onClick={onPlusBrainClick}
+        onClick={onMinusBrainClick}
       >
         - BRAIN
       </Button>

@@ -16,6 +16,13 @@ export const addBrain = (id) => {
   }
 }
 
+export const minusBrain = (id) => {
+  return {
+    type: 'MINUS_BRAIN',
+    id
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: 'SET_VISIBILITY_FILTER',

@@ -5,7 +5,7 @@ import {
 import { PropTypes } from 'prop-types'
 import Player from './Player'
 
-const PlayerList = ({ players, onPlayerClick, onPlusBrainClick }) => (
+const PlayerList = ({ players, onPlayerClick, onPlusBrainClick, onMinusBrainClick }) => (
   <div>
     {players.map(player =>
       <Player
@@ -13,6 +13,7 @@ const PlayerList = ({ players, onPlayerClick, onPlusBrainClick }) => (
         {...player}
         onClick={() => onPlayerClick(player.id)}
         onPlusBrainClick={() => onPlusBrainClick(player.id)}
+        onMinusBrainClick={() => onMinusBrainClick(player.id)}
         player={player}
       />
     )}
@@ -27,7 +28,8 @@ PlayerList.propTypes = {
     brainCount: PropTypes.number.isRequired,
   }).isRequired).isRequired,
   onPlayerClick: PropTypes.func.isRequired,
-  onPlusBrainClick: PropTypes.func.isRequired
+  onPlusBrainClick: PropTypes.func.isRequired,
+  onMinusBrainClick: PropTypes.func.isRequired
 }
 
 export default PlayerList
