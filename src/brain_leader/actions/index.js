@@ -9,6 +9,13 @@ export const addPlayer = (text) => {
   }
 }
 
+export const addBrain = (id) => {
+  return {
+    type: 'ADD_BRAIN',
+    id
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: 'SET_VISIBILITY_FILTER',

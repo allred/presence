@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { togglePlayer } from '../actions'
+import { togglePlayer, addBrain } from '../actions'
 import PlayerList from '../components/PlayerList'
 
 const getVisiblePlayers = (players, filter) => {
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onPlayerClick: (id) => {
       dispatch(togglePlayer(id))
+    },
+    onPlusBrainClick: (id) => {
+      dispatch(addBrain(id))
     }
   }
 }

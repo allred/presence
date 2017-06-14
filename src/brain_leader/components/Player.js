@@ -2,13 +2,12 @@ import React from 'react'
 import {
   Button,
   Col,
-  //ListGroupItem,
   Row,
 } from 'react-bootstrap'
 import { PropTypes } from 'prop-types'
 import PlusBrain from '../components/PlusBrain'
 
-const Player = ({ onClick, completed, text, brainCount }) => (
+const Player = ({ onClick, onPlusBrainClick, completed, text, brainCount, player }) => (
   <Row>
     <Col md={2}
       onClick={onClick}
@@ -16,18 +15,24 @@ const Player = ({ onClick, completed, text, brainCount }) => (
         textDecoration: completed ? 'line-through' : 'none'
       }}
     >
-      {text}
+      {player.id} {text}
     </Col>
     <Col md={2}>
-      <Button>
+      <Button
+        onClick={onPlusBrainClick}
+      >
         - BRAIN
       </Button>
     </Col>
     <Col md={2}>
-      <PlusBrain />
+      <Button 
+        onClick={onPlusBrainClick}
+      >
+        + BRAIN
+      </Button>
     </Col>
     <Col md={2}>
-      {brainCount} 
+      {player.brainCount}
     </Col>
   </Row>
 )
