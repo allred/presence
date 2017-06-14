@@ -27,7 +27,7 @@ let AddPlayer = ({ dispatch }) => {
           input = node
         }} />
         &nbsp;
-        <Button type="submit" bsStyle="primary">
+        <Button type="submit" bsStyle="primary" bsSize="large">
           ADD PLAYER
         </Button>
       </FormGroup>

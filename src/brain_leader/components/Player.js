@@ -12,7 +12,8 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
       backgroundColor: bgColor
     }}
   >
-    <Col md={2}
+    <Col
+      xs={2}
       onClick={onClick}
       style={{
         textDecoration: completed ? 'line-through' : 'none',
@@ -20,23 +21,31 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
     >
       {text}
     </Col>
-    <Col md={2}>
+    <Col
+      xs={4}
+    >
       <Button
         bsStyle="warning"
+        bsSize="large"
         onClick={onMinusBrainClick}
       >
         - BRAIN
       </Button>
     </Col>
-    <Col md={2}>
+    <Col
+      xs={4}
+    >
       <Button 
         bsStyle="success"
+        bsSize="large"
         onClick={onPlusBrainClick}
       >
         + BRAIN
       </Button>
     </Col>
-    <Col md={2}>
+    <Col
+      xs={2}
+    >
       {player.brainCount}
     </Col>
   </Row>

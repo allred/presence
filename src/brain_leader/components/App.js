@@ -9,7 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import styles from './App.css'
 
 const App = () => (
-  <Grid>
+  <Grid
+    fluid={true}
+  >
     <VisiblePlayerList />
     <p />
     <AddPlayer />
