@@ -20,12 +20,14 @@ let AddPlayer = ({ dispatch }) => {
           return
         }
         dispatch(addPlayer(input.value))
-        input.value = ''
+        input.value = "Zombie" + Math.floor(Math.random() * 100)
       }}>
       <FormGroup>
         <input ref={node => {
           input = node
-        }} />
+        }}
+        defaultValue={"Zombie" + Math.floor(Math.random() * 100)}
+        />
         &nbsp;
         <Button type="submit" bsStyle="primary" bsSize="large">
           ADD PLAYER
