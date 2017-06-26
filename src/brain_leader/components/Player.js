@@ -19,7 +19,7 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
         textDecoration: completed ? 'line-through' : 'none',
       }}
     >
-      {text}
+      <h3>{text}</h3>
     </Col>
     <Col
       xs={4}
@@ -46,7 +46,7 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
     <Col
       xs={2}
     >
-      {player.brainCount}
+      <h3>{player.brainCount}</h3>
     </Col>
   </Row>
 )
