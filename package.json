@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack -d --display-reasons --display-chunks --progress",
     "webpack_dev": "webpack -d --watch --config webpack.dev.js",
-    "webpack_prod": "webpack --watch -p --display-reasons --display-chunks --progress --config webpack.prod.js",
+    "webpack_prod": "webpack -p --display-reasons --display-chunks --progress --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
