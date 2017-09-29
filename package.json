@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "webpack -d --display-reasons --display-chunks --progress",
-    "webpack_dev": "webpack --watch",
+    "webpack_dev": "webpack -d --watch --config webpack.dev.js",
+    "webpack_prod": "webpack -p --display-reasons --display-chunks --progress --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -44,6 +45,7 @@
     "react-dom": "^15.5.3",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.1.0"
   },
