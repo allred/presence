@@ -19,7 +19,7 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
         textDecoration: completed ? 'line-through' : 'none',
       }}
     >
-      <h4>{text}</h4>
+      <h3>{text}</h3>
     </Col>
     <Col
       xs={4}
@@ -29,7 +29,7 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
         bsSize="large"
         onClick={onMinusBrainClick}
       >
-        - BRAIN
+        - <img src="/brain_leader/brain-50.png" />
       </Button>
     </Col>
     <Col
@@ -40,13 +40,13 @@ const Player = ({ onClick, onPlusBrainClick, onMinusBrainClick, completed, text,
         bsSize="large"
         onClick={onPlusBrainClick}
       >
-        + BRAIN
+        + <img src="/brain_leader/brain-50.png" />
       </Button>
     </Col>
     <Col
       xs={2}
     >
-      <h4>{player.brainCount}</h4>
+      <h3>{player.brainCount}</h3>
     </Col>
   </Row>
 )
