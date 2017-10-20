@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'destroyers' => 'destroyers#index'
   get 'brain_leader' => 'brain_leader#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
