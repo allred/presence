@@ -3,6 +3,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <% end %>
 <div class="container">
-  <h2><a href="https://github.com/allred/niantictools">niantictools</a> stats for agent <strong>mugu</strong> <small>[generated <%== @mtime %>]</small></h2>
-<%== @data_html %>
+  <h3>
+    <a href="https://github.com/allred/niantictools">niantictools</a> stats for agent <strong>mugu</strong>
+      <small>[generated <%== @mtime %>]</small>
+  </h3>
+  <div class="row">
+    <%== @data_html %>
+  </div>
 </div>
