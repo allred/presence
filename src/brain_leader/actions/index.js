@@ -14,6 +14,12 @@ export const addPlayer = (text) => {
   }
 }
 
+export const resetScore = () => {
+  return {
+    type: 'RESET_SCORE',
+  }
+}
+
 export const addBrain = (id) => {
   return {
     type: 'ADD_BRAIN',

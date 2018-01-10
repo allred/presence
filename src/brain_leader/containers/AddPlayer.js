@@ -12,8 +12,7 @@ import { addPlayer } from '../actions'
 let AddPlayer = ({ dispatch }) => {
   let input
   return (
-    <Row>
-    <Col md={12}>
+    <Col md={8}>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -35,7 +34,6 @@ let AddPlayer = ({ dispatch }) => {
       </FormGroup>
       </form>
     </Col>
-    </Row>
   )
 }
 AddPlayer = connect()(AddPlayer)

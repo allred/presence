@@ -26,9 +26,12 @@ const player = (state = {}, action) => {
       if (state.id !== action.id) {
         return state
       }
-
       return Object.assign({}, state, {
         completed: !state.completed
+      })
+    case 'RESET_SCORE':
+      return Object.assign({}, state, {
+        brainCount: 0
       })
     case 'DELETE_PLAYER':
     default:
@@ -54,6 +57,10 @@ const players = (state = [], action) => {
     case 'TOGGLE_PLAYER':
       return state.map(t =>
         player(t, action)
+      )
+    case 'RESET_SCORE':
+      return state.map(p =>
+        player(p, action)
       )
     default:
       return state
