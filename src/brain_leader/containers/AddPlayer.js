@@ -22,7 +22,7 @@ let AddPlayer = ({ dispatch }) => {
         input.value = "z" + Math.floor(Math.random() * 10)
       }}>
       <FormGroup>
-        <input ref={node => {
+        <input onFocus={() => {input.select()}} ref={node => {
           input = node
         }}
         defaultValue={"z" + Math.floor(Math.random() * 10)}
