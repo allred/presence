@@ -4,10 +4,17 @@
   <% if content_for?(:head_top) %>
     <%= yield(:head_top) %>
   <% end %>
-  <title>mikeallred.com</title>
+
+  <% if content_for?(:head_title) %>
+    <%= yield(:head_title) %>
+  <% else %>
+    <title>mikeallred.com</title>
+  <% end %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
   <% if content_for?(:head) %>
     <%= yield(:head) %>
   <% end %>
