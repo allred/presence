@@ -63,3 +63,7 @@ bower.json
 .byebug_history
 /public/packs
 /node_modules
+/public/packs-test
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
