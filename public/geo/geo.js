@@ -37,7 +37,7 @@ function loggit(lat, lng) {
       //console.log("success")
     },
     error: function(result) {
-      $("#log").prepend("<div>" + result + "</div>")
+      $("#log").prepend('<div style="color:red">' + JSON.stringify(result) + "</div>")
     },
   })
 }
