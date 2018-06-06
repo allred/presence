@@ -21,20 +21,28 @@ function loggit(lat, lng) {
       loglength = $("#log").children().length
       date = Date()
       $("#bigstatus").html("lat: " + lat + "<br> lng: " + lng)
-      let emphasis_open = ""
-      let emphasis_close = ""
+      let logRow = $("<div>", {"class": "row"})
+
+
+      let count = $("<small>")
+      count.html("[" + counter + "] ")
+      count.css("color", "#" + result.c)
+      logRow.append(count)
+
+      let logText = $("<small>")
+      logText.html(JSON.stringify(result))
+      logRow.append(logText)
       if (changed) {
-        //$("#log").prepend("<div><small>changed</small></div>")
-        emphasis_open = '<b style="color:green">'
-        emphasis_close = "</b>"
+        logText.css("color", "green")
       }
-      $("#log").prepend("<div><small>" + emphasis_open + counter + " " + JSON.stringify(result) + emphasis_close + "</small></div>")
+
+
+      $("#log").prepend(logRow)
       if (loglength > showmax) {
         $("#log").find("div:nth-last-child(-n+1)").remove()
       }
       counter += 1
       changed = false
-      //console.log("success")
     },
     error: function(result) {
       $("#log").prepend('<div style="color:red">' + JSON.stringify(result) + "</div>")
