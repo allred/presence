@@ -26,7 +26,7 @@ class PintoController < ApplicationController
   private
 
   def ip_to_color(ip)
-    ip = IPAdddr.new(ip).to_i.to_s(16)
+    hex = IPAddr.new(ip).to_i.to_s(16)
     components = []
     hex.scan(/(\w\w)/).each do |c|
       components.push(c.first)
