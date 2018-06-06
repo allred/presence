@@ -7,7 +7,9 @@ class PintoController < ApplicationController
   end
 
   def create
-    @results = ["create"]
+    @results = {
+      t: Time.now.strftime("%Y%m%d %H%M%S")
+    }
     render json: @results
   end
 end
