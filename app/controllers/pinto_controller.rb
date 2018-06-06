@@ -10,7 +10,8 @@ class PintoController < ApplicationController
     @results = {
       lat: params['lat'],
       lng: params['lng'],
-      t: Time.now.strftime("%Y%m%d %H%M%S")
+      ip: request.remote_ip,
+      t: Time.now.strftime("%Y%m%d %H%M%S"),
     }
     render json: @results
   end
