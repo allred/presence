@@ -11,7 +11,7 @@ function loggit(lat, lng) {
   last_lng = lng
   $.ajax({
     //url: "/robots.txt?geo," + lat + "," + lng,
-    url: "https://mikeallred.com/api/pinto",
+    url: "/api/pinto",
     method: "POST",
     data: {
       lat: lat,
