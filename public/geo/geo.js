@@ -27,6 +27,7 @@ function loggit(lat, lng) {
       let count = $("<small>")
       count.html("[" + counter + "] ")
       count.css("color", "#" + result.c)
+      count.css("background-color", "gray")
       logRow.append(count)
 
       let logText = $("<small>")
