@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  scope '/api' do
+    resources :pinto
+  end
 
   get 'brain_leader' => 'brain_leader#index'
   get 'destroyers' => 'destroyers#index'
