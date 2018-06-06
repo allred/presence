@@ -28,7 +28,7 @@ function loggit(lat, lng) {
         emphasis_open = '<b style="color:green">'
         emphasis_close = "</b>"
       }
-      $("#log").prepend("<div><small>" + emphasis_open + lat + " " + lng + " " + counter + " " + date + " " + result + emphasis_close + "</small></div>")
+      $("#log").prepend("<div><small>" + emphasis_open + lat + " " + lng + " " + counter + " " + date + " " + JSON.stringify(result) + emphasis_close + "</small></div>")
       if (loglength > showmax) {
         $("#log").find("div:nth-last-child(-n+1)").remove()
       }
