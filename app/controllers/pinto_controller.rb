@@ -8,6 +8,8 @@ class PintoController < ApplicationController
 
   def create
     @results = {
+      lat: params['lat'],
+      lng: params['lng'],
       t: Time.now.strftime("%Y%m%d %H%M%S")
     }
     render json: @results
