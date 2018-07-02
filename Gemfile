@@ -55,5 +55,6 @@ group :development do
   gem 'guard'
 end
 
+gem 'aws-sdk'
 gem 'therubyracer'
 gem 'webpacker'
