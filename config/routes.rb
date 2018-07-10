@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'brain_leader' => 'brain_leader#index'
   get 'destroyers' => 'destroyers#index'
+  get 'geo' => 'geo#index'
   get 'pinto' => 'pinto#index'
   get 'react_one' => 'react_one#index'
   get 'resume' => 'resume#index'
