@@ -7,7 +7,10 @@ let map = null
 function loggit(lat, lng) {
   //console.log(lat, lng)
   let changed = false
-  if (last_lat != lat || last_lng != lng ) { changed = true }
+  if (last_lat != lat || last_lng != lng ) {
+    changed = true
+    setCenter({lat, lng})
+  }
   last_lat = lat
   last_lng = lng
   $.ajax({
@@ -63,15 +66,19 @@ let watchID = navigator.geolocation.watchPosition(function(position) {
   let lat = position.coords.latitude
   let lng = position.coords.longitude
   loggit(lat, lng)
-  setCenter({lat, lng})
 })
 
 function setCenter(position) {
   map.setCenter(position)
-  let marker = new google.maps.Marker({
+  addMarker(position)
+}
+
+function addMarker(position) {
+  var marker = new google.maps.Marker({
     position: position,
-    map: map
-  })
+    map: map,
+    icon: '/favicon.ico'
+  });
 }
 
 function initMap() {
@@ -79,10 +86,5 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 18,
     center: myLatLng
-  });
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: ''
   });
 }
