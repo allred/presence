@@ -2,6 +2,7 @@ let showmax = 10
 let counter = 0
 let last_lat = null
 let last_lng = null
+let map = null
 
 function loggit(lat, lng) {
   //console.log(lat, lng)
@@ -59,5 +60,29 @@ navigator.geolocation.getCurrentPosition(function(position) {
 */
 
 let watchID = navigator.geolocation.watchPosition(function(position) {
-  loggit(position.coords.latitude, position.coords.longitude)
+  let lat = position.coords.latitude
+  let lng = position.coords.longitude
+  loggit(lat, lng)
+  setCenter({lat, lng})
 })
+
+function setCenter(position) {
+  map.setCenter(position)
+  let marker = new google.maps.Marker({
+    position: position,
+    map: map
+  })
+}
+
+function initMap() {
+  var myLatLng = {lat: -34.397, lng: 150.644};
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: myLatLng
+  });
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: ''
+  });
+}
