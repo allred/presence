@@ -16,6 +16,7 @@ function loggit(lat, lng) {
     data: {
       lat: lat,
       lng: lng,
+      clr: "000000",
     },
     success: function(result) {
       loglength = $("#log").children().length

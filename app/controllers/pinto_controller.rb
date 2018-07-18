@@ -19,7 +19,7 @@ class PintoController < ApplicationController
       t: Time.now.strftime("%Y%m%d %H%M%S"),
       c: ip_to_color(request.remote_ip),
     }
-    if params['lat'] =~ /^\-*\d+\.\d+$/ && params['lng'] =~ /^\-*\d+\.\d+$/
+    if validate_params
       dynamo_data = {
         ip: request.remote_ip,
         date: Time.now.to_s,
@@ -51,5 +51,14 @@ class PintoController < ApplicationController
       components.push(c.first)
     end
     return components[1,3].join('')
+  end
+
+  def validate_params
+    return false unless params['lat'] =~ /^\-*\d+\.\d+$/
+    return false unless params['lng'] =~ /^\-*\d+\.\d+$/
+    if params['clr']
+      return false unless params['clr'].size == 6
+    end
+    return true
   end
 end
