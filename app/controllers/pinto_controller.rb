@@ -16,7 +16,7 @@ class PintoController < ApplicationController
       lat: params['lat'],
       lng: params['lng'],
       ip: request.remote_ip,
-      t: Time.now.strftime("%Y%m%d %H%M%S"),
+      #t: Time.now.strftime("%Y%m%d %H%M%S"),
       c: ip_to_color(request.remote_ip),
     }
     if validate_params
@@ -29,7 +29,9 @@ class PintoController < ApplicationController
         color: ip_to_color(request.remote_ip),
       }
       #logger.debug dynamo_data
-      dynamo_put(dynamo_data)
+      if dynamo_put(dynamo_data)
+        @results.merge!({s: "+"})
+      end
     end
     render json: @results
   end
@@ -41,6 +43,8 @@ class PintoController < ApplicationController
     client.put_item({
       table_name: 'pinto_gps',
       item: item,
+      #return_values: "ALL_OLD",
+      #return_item_collection_metrics: "SIZE",
     })
   end
 
@@ -54,10 +58,12 @@ class PintoController < ApplicationController
   end
 
   def validate_params
+    # lat and lng can be quite lengthy, ie: -73.938018
     return false unless params['lat'] =~ /^\-*\d+\.\d+$/
     return false unless params['lng'] =~ /^\-*\d+\.\d+$/
+    # clr is a rrggbb string
     if params['clr']
-      return false unless params['clr'].size == 6
+      return false unless params['clr'] =~ /^\w{6}$/
     end
     return true
   end
