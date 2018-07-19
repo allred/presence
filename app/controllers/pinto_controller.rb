@@ -16,7 +16,7 @@ class PintoController < ApplicationController
       lat: params['lat'],
       lng: params['lng'],
       ip: request.remote_ip,
-      #t: Time.now.strftime("%Y%m%d %H%M%S"),
+      t: Time.now.strftime("%Y%m%d %H%M%S"),
       c: ip_to_color(request.remote_ip),
     }
     if validate_params
