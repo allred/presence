@@ -27,7 +27,7 @@ eoc
 system cmd_to_docx
 
 cmd_to_pdf = <<-eoc
-  htmldoc --webpage -t pdf14 #{path_html} > #{path_write_static}/mikeallred.pdf
+  htmldoc --webpage --footer "" -t pdf14 #{path_html} > #{path_write_static}/mikeallred.pdf
 eoc
 system cmd_to_pdf
 
