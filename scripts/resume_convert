@@ -22,7 +22,7 @@ eoc
 system cmd_to_dos
 
 cmd_to_docx = <<-eoc
-  pandoc -s -S #{path_html} -o #{path_write_static}/mikeallred.docx
+  pandoc -s #{path_html} -o #{path_write_static}/mikeallred.docx
 eoc
 system cmd_to_docx
 
