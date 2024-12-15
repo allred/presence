@@ -4,15 +4,15 @@ source 'https://rubygems.org'
 gem 'rails-controller-testing'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.4'
-gem 'activesupport', '5.1.4'
+gem 'rails', '7.0.4.1'
+gem 'activesupport', '7.0.4.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 # mja: added the following 5.0.6 lock to deal with warnings
 # mja: https://github.com/rails/sass-rails/issues/381
-gem 'sass-rails', '5.0.6'
+gem 'sass-rails', '6.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -44,7 +44,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 3.0'
+  gem 'web-console', '~> 4.2'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
